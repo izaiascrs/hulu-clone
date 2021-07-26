@@ -7,12 +7,6 @@ import requests from '../utils/request';
 export default function Home({ results }) {
   return (
     <div>
-      {/* <Head>
-        <title>Hulu</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header /> */}
-      {/* <Nav /> */}
       <Results results={results} />
     </div>
   )
@@ -21,7 +15,7 @@ export default function Home({ results }) {
 export const getServerSideProps = async (ctx) => {
   const { genre } = ctx.query;
 
-  const request = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url || requests.fetchTrending.url}`);
+  const request = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url || requests.fetchUpcoming.url}`);
   const results = await request.json();
 
   return {

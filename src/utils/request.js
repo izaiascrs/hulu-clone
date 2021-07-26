@@ -2,6 +2,10 @@ const API_KEY = process.env.API_KEY;
 
 // eslint-disable-next-line
 export default {
+  fetchUpcoming: {
+    title: 'Upcoming',
+    url: `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
+  },
   fetchTrending: {
     title: 'Trending',
     url: `/trending/all/week?api_key=${API_KEY}&lang=en_US`,
